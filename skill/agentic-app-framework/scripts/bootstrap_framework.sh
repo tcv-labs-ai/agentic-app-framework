@@ -4,6 +4,19 @@ set -euo pipefail
 source_dir="/Users/sws/Development/hobby/agentic-app-framework"
 target_dir=""
 force="false"
+dry_run="false"
+
+usage() {
+  cat <<EOF
+Usage: $0 --target <repo-path> [--source <framework-repo-path>] [--force] [--dry-run]
+
+Options:
+  --target   Repository path to receive the framework
+  --source   Framework repository path to copy from
+  --force    Overwrite existing framework paths in the target repo
+  --dry-run  Print planned actions without copying files
+EOF
+}
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
@@ -19,9 +32,17 @@ while [ "$#" -gt 0 ]; do
       force="true"
       shift
       ;;
+    --dry-run)
+      dry_run="true"
+      shift
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
     *)
       echo "Unknown argument: $1" >&2
-      echo "Usage: $0 --target <repo-path> [--source <framework-repo-path>] [--force]" >&2
+      usage >&2
       exit 1
       ;;
   esac
@@ -29,6 +50,7 @@ done
 
 if [ -z "$target_dir" ]; then
   echo "Missing required --target <repo-path>" >&2
+  usage >&2
   exit 1
 fi
 
@@ -55,7 +77,24 @@ for path in "${required_source_paths[@]}"; do
   fi
 done
 
-mkdir -p "$target_dir/scripts"
+copy_pairs=(
+  "$source_dir/AGENTS.md:$target_dir/AGENTS.md"
+  "$source_dir/docs:$target_dir/docs"
+  "$source_dir/scripts/init-project.sh:$target_dir/scripts/init-project.sh"
+)
+
+echo "Agentic App Framework bootstrap"
+echo "- source: $source_dir"
+echo "- target: $target_dir"
+echo "- dry run: $dry_run"
+echo "- force: $force"
+echo "- copy plan:"
+
+for pair in "${copy_pairs[@]}"; do
+  src="${pair%%:*}"
+  dest="${pair#*:}"
+  echo "  - $src -> $dest"
+done
 
 copy_path() {
   local src="$1"
@@ -66,15 +105,32 @@ copy_path() {
     exit 1
   fi
 
+  if [ "$dry_run" = "true" ]; then
+    if [ -e "$dest" ]; then
+      echo "Would replace: $dest"
+    else
+      echo "Would create: $dest"
+    fi
+    return 0
+  fi
+
+  mkdir -p "$(dirname "$dest")"
   rm -rf "$dest"
   cp -R "$src" "$dest"
 }
 
-copy_path "$source_dir/AGENTS.md" "$target_dir/AGENTS.md"
-copy_path "$source_dir/docs" "$target_dir/docs"
-find "$target_dir/docs" -name ".DS_Store" -delete
-copy_path "$source_dir/scripts/init-project.sh" "$target_dir/scripts/init-project.sh"
+for pair in "${copy_pairs[@]}"; do
+  src="${pair%%:*}"
+  dest="${pair#*:}"
+  copy_path "$src" "$dest"
+done
 
+if [ "$dry_run" = "true" ]; then
+  echo "Dry run complete."
+  exit 0
+fi
+
+find "$target_dir/docs" -name ".DS_Store" -delete
 chmod +x "$target_dir/scripts/init-project.sh"
 
 echo "Bootstrapped agentic app framework into: $target_dir"
