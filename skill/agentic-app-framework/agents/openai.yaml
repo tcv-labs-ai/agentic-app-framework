@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic App Framework"
+  short_description: "Bootstrap and maintain PRD/TDD docs"
+  default_prompt: "Use $agentic-app-framework to initialize or maintain the product and technical documentation framework in this repository."

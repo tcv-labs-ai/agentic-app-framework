@@ -12,18 +12,24 @@ Future sessions should use this index to understand where decisions live and whi
 
 For general orientation, read in this order:
 
-1. `terminology.md`
-2. `prd/`
-3. `tdd/README.md`
-4. `ui-direction.md`
-5. `design-system.md`
-6. `implementation-status.md`
-7. `roadmap.md`
-8. `adr/README.md`
+1. `getting-started.md`
+2. `terminology.md`
+3. `prd/`
+4. `tdd/README.md`
+5. `ui-direction.md`
+6. `design-system.md`
+7. `implementation-status.md`
+8. `roadmap.md`
+9. `adr/README.md`
 
 ---
 
 ## Directory Guide
+
+### `getting-started.md`
+
+Fast path for first-time framework use.
+Use this to stand up a new project without guessing document order or process.
 
 ### `terminology.md`
 

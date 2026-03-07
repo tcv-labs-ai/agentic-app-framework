@@ -39,3 +39,9 @@ Recommended sections:
 - Decision
 - Consequences
 - Alternatives Considered
+
+
+## Current ADRs
+
+- `001-separate-prd-tdd-and-implementation-status.md`
+- `002-restrict-adrs-to-real-architectural-decisions.md`
