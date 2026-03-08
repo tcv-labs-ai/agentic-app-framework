@@ -55,6 +55,14 @@ Use this framework when you want:
 - a disciplined way to keep docs synchronized with code changes
 - a lightweight ADR process for real architectural decisions
 
+## Included Example
+
+This repository includes one example application:
+
+- `examples/focus-timer/`: a small browser-first timer app that demonstrates a filled-out framework instance with real docs, code, tests, implementation-status tracking, and a focused ADR set
+
+Use it when you want to see what the framework looks like after it has been instantiated for a real product.
+
 ## How To Start A New Project
 
 You have three valid paths.

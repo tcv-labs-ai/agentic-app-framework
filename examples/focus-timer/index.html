@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Timer Example</title>
+    <link rel="stylesheet" href="./src/presentation/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell work" id="app-shell">
+      <section class="timer-card">
+        <p class="eyebrow">Framework Example</p>
+        <h1>Focus Timer</h1>
+        <p class="supporting-copy">
+          A minimal browser-first example that demonstrates the framework with a real timer app.
+        </p>
+
+        <div class="phase-pill" id="phase-label">Work session</div>
+        <div class="time-display" id="time-display" aria-live="polite">25:00</div>
+        <p class="phase-copy" id="phase-copy">Stay focused until the session completes.</p>
+        <p class="status-line" id="status-line">Ready to start</p>
+
+        <div class="controls">
+          <button id="start-button">Start</button>
+          <button id="pause-button" class="secondary">Pause</button>
+          <button id="resume-button" class="secondary">Resume</button>
+          <button id="reset-button" class="ghost">Reset</button>
+        </div>
+
+        <form class="settings-panel" id="settings-form">
+          <h2>Session settings</h2>
+          <label>
+            Work minutes
+            <input id="work-minutes" type="number" min="1" step="1" />
+          </label>
+          <label>
+            Break minutes
+            <input id="break-minutes" type="number" min="1" step="1" />
+          </label>
+          <p class="validation-message" id="validation-message"></p>
+          <button type="submit" class="secondary">Save settings</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="./src/presentation/app.js"></script>
+  </body>
+</html>
