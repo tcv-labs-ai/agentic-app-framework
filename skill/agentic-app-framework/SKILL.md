@@ -61,6 +61,7 @@ When maintaining docs:
 - distinguish implemented behavior from planned behavior
 - prefer updating existing docs over creating new process docs
 - keep handoffs factual, concise, and focused on session continuity
+- include handoff closeout metadata: `Closed At` in `YYYY-MM-DD h:mm AM/PM [TIMEZONE]` format and `Closed By` for the user/operator who requested or performed closeout
 - keep `AGENTS.md` as a router, not a second PRD
 
 ## Bundled Resources

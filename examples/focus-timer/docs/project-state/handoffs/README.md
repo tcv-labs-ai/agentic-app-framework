@@ -19,6 +19,11 @@ YYYY-MM-DD-short-title.md
 ```md
 # Session Handoff: YYYY-MM-DD Short Title
 
+## Closeout
+
+- Closed At: YYYY-MM-DD h:mm AM/PM [TIMEZONE]
+- Closed By: [USER_OR_OPERATOR]
+
 ## Summary
 
 - [WHAT_CHANGED]
@@ -47,6 +52,8 @@ YYYY-MM-DD-short-title.md
 ## Rules
 
 - Keep handoffs factual and brief.
+- Include closeout date and time in 12-hour format, using the local/project timezone when known.
+- Include the user or operator who requested or performed the session closeout.
 - Link to PRDs, TDDs, ADRs, or implementation status when relevant.
 - Do not duplicate the full implementation status document.
 - Do not include secrets, credentials, tokens, private keys, `.env` values, or local-only private data.

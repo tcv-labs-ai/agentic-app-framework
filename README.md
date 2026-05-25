@@ -146,6 +146,7 @@ Typical responsibilities:
 - update `project-state/implementation-status.md` after meaningful implementation work
 - update PRDs or TDDs when their source-of-truth layers change
 - add concise handoffs when a session leaves useful continuity context
+- include handoff closeout metadata with 12-hour local/project time and closing user/operator
 - add ADRs only for real architectural or structural decisions
 
 ## Bootstrap Prompts For Codex
@@ -209,6 +210,7 @@ As work proceeds:
 - update `docs/project-state/implementation-status.md` when implementation meaningfully moves
 - update `docs/project-state/roadmap.md` when milestone sequencing or current phase changes
 - add a handoff under `docs/project-state/handoffs/` when future sessions need concise continuity context
+- when adding a handoff, include `Closed At` in `YYYY-MM-DD h:mm AM/PM [TIMEZONE]` format and `Closed By` for the user/operator who requested or performed closeout
 - add ADRs only for real architectural or structural decisions
 
 Do not add ADRs for:
@@ -230,7 +232,8 @@ For each meaningful feature or implementation pass:
 6. update `project-state/implementation-status.md`
 7. update PRD/TDD/roadmap only where their source-of-truth layer changed
 8. add a handoff if future sessions need continuity context
-9. add an ADR only if the work changed architectural direction
+9. include closeout date/time and closing user/operator in the handoff
+10. add an ADR only if the work changed architectural direction
 
 ## Repository Layout
 

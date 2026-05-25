@@ -9,6 +9,7 @@ Use this checklist after meaningful implementation work.
 - Did technical direction change in a way that requires a TDD update?
 - Did milestone status or sequencing change enough to update `docs/project-state/roadmap.md`?
 - Did this session leave non-obvious context that should be captured in `docs/project-state/handoffs/`?
+- If adding a handoff, does it include `Closed At` in 12-hour local/project time and `Closed By` for the user/operator?
 - Was there a real architectural or structural decision that justifies a new ADR?
 
 ## Do Not Add An ADR For
@@ -26,4 +27,5 @@ Use this checklist after meaningful implementation work.
 3. update `project-state/implementation-status.md`
 4. update PRD/TDD only where the source of truth changed
 5. add a handoff only when future sessions need concise continuity context
-6. add ADR only if the decision changes how future engineering should proceed
+6. include closeout date/time and closing user/operator in the handoff
+7. add ADR only if the decision changes how future engineering should proceed
