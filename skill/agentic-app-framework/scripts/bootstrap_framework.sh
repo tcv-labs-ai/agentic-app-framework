@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-source_dir="/Users/sws/Development/hobby/agentic-app-framework"
+source_dir="/Users/sws/Development/tcv-labs/skills/tcv-labs-agentic-app-framework"
 target_dir=""
 force="false"
 dry_run="false"
@@ -137,4 +137,4 @@ echo "Bootstrapped agentic app framework into: $target_dir"
 echo "Next steps:"
 echo "1. Run scripts/init-project.sh if this repo should use template placeholders."
 echo "2. Replace remaining placeholders manually."
-echo "3. Review docs/README.md and docs/implementation-status.md before implementation work."
+echo "3. Review docs/README.md and docs/project-state/implementation-status.md before implementation work."

@@ -15,14 +15,15 @@ The goal is simple: make it practical to build applications with AI while keepin
 
 - `AGENTS.md`: repo-level operating and routing rules for agents
 - `docs/README.md`: source-of-truth map and maintenance rules
-- `docs/prd/`: product requirement templates
-- `docs/tdd/`: technical design templates
-- `docs/ui-direction.md`: UX and interaction-direction template
-- `docs/design-system.md`: design-system and token template
+- `docs/product/prd/`: product requirement templates
+- `docs/engineering/tdd/`: technical design templates
+- `docs/design/ui-direction.md`: UX and interaction-direction template
+- `docs/design/design-system.md`: design-system and token template
 - `docs/terminology.md`: canonical naming template
-- `docs/implementation-status.md`: implementation tracking layer
-- `docs/roadmap.md`: milestone sequencing layer
-- `docs/adr/README.md`: ADR process and format
+- `docs/project-state/implementation-status.md`: implementation tracking layer
+- `docs/project-state/roadmap.md`: milestone sequencing layer
+- `docs/project-state/handoffs/README.md`: session handoff convention
+- `docs/engineering/adr/README.md`: ADR process and format
 
 ### Companion Codex skill
 
@@ -31,17 +32,18 @@ The goal is simple: make it practical to build applications with AI while keepin
 - skill responsibilities:
   - bootstrap the framework into an existing repo
   - enforce the maintenance discipline as implementation changes land
-  - keep `implementation-status.md`, PRDs, TDDs, roadmap, and ADR usage aligned with repo changes
+  - keep project-state docs, PRDs, TDDs, roadmap, handoffs, and ADR usage aligned with repo changes
 
 ## Core Model
 
-This framework separates five concerns clearly:
+This framework separates six concerns clearly:
 
 1. PRDs define what the product should do.
 2. TDDs define how it should be implemented.
 3. UI and design docs define how it should feel and look.
-4. `implementation-status.md` defines what is already built.
+4. `project-state/implementation-status.md` defines what is already built.
 5. ADRs explain why major architectural decisions were made.
+6. Handoffs preserve concise session continuity for future agents.
 
 That separation is the core value of the framework. Do not collapse these layers back into one generic project doc.
 
@@ -53,13 +55,14 @@ Use this framework when you want:
 - clear separation of product requirements and technical design
 - better continuity across Codex sessions
 - a disciplined way to keep docs synchronized with code changes
+- a place for factual session handoffs without bloating durable status docs
 - a lightweight ADR process for real architectural decisions
 
 ## Included Example
 
 This repository includes one example application:
 
-- `examples/focus-timer/`: a small browser-first timer app that demonstrates a filled-out framework instance with real docs, code, tests, implementation-status tracking, and a focused ADR set
+- `examples/focus-timer/`: a small browser-first timer app that demonstrates a filled-out framework instance with real docs, code, tests, implementation-status tracking, project-state structure, and a focused ADR set
 
 Use it when you want to see what the framework looks like after it has been instantiated for a real product.
 
@@ -105,7 +108,7 @@ The repository is the source of truth for the skill. Your local Codex installati
 Install or refresh the local skill with:
 
 ```bash
-cd /Users/sws/Development/hobby/agentic-app-framework
+cd /Users/sws/Development/tcv-labs/skills/tcv-labs-agentic-app-framework
 ./scripts/install-local-skill.sh
 ```
 
@@ -120,7 +123,7 @@ $HOME/.codex/skills/agentic-app-framework
 When the skill changes in this repository, refresh the local installed copy:
 
 ```bash
-cd /Users/sws/Development/hobby/agentic-app-framework
+cd /Users/sws/Development/tcv-labs/skills/tcv-labs-agentic-app-framework
 git pull
 ./scripts/install-local-skill.sh
 ```
@@ -140,8 +143,9 @@ Typical responsibilities:
 - bootstrap the framework into an existing repo
 - guide product-doc setup for a new application
 - maintain documentation discipline while implementing features
-- update `implementation-status.md` after meaningful implementation work
+- update `project-state/implementation-status.md` after meaningful implementation work
 - update PRDs or TDDs when their source-of-truth layers change
+- add concise handoffs when a session leaves useful continuity context
 - add ADRs only for real architectural or structural decisions
 
 ## Bootstrap Prompts For Codex
@@ -169,19 +173,19 @@ Use $agentic-app-framework. Read the framework docs and help me draft the first-
 ### Continue implementation with maintenance discipline
 
 ```text
-Use $agentic-app-framework. Before coding, read implementation-status and the relevant PRDs/TDDs. After implementation, update the docs that meaningfully changed and only add an ADR if a real architectural decision was made.
+Use $agentic-app-framework. Before coding, read project-state/implementation-status, recent handoffs, and the relevant PRDs/TDDs. After implementation, update the docs that meaningfully changed, add a handoff if useful for continuity, and only add an ADR if a real architectural decision was made.
 ```
 
 ### UI work with documentation discipline
 
 ```text
-Use $agentic-app-framework. Read implementation-status, the relevant PRDs/TDDs, ui-direction, and design-system docs before changing the UI. After implementation, update documentation status if the milestone moved.
+Use $agentic-app-framework. Read project-state/implementation-status, recent handoffs, the relevant PRDs/TDDs, ui-direction, and design-system docs before changing the UI. After implementation, update documentation status if the milestone moved.
 ```
 
 ### Architecture or refactor work
 
 ```text
-Use $agentic-app-framework. Review the current architecture docs and implementation-status first. If this refactor changes technical direction, update the TDDs. Add an ADR only if the change materially affects future engineering decisions.
+Use $agentic-app-framework. Review the current architecture docs, project-state/implementation-status, and recent handoffs first. If this refactor changes technical direction, update the TDDs. Add an ADR only if the change materially affects future engineering decisions.
 ```
 
 ## Optional Placeholder Initialization
@@ -202,8 +206,9 @@ As work proceeds:
 
 - update PRDs when product behavior changes
 - update TDDs when implementation direction changes
-- update `docs/implementation-status.md` when implementation meaningfully moves
-- update `docs/roadmap.md` when milestone sequencing or current phase changes
+- update `docs/project-state/implementation-status.md` when implementation meaningfully moves
+- update `docs/project-state/roadmap.md` when milestone sequencing or current phase changes
+- add a handoff under `docs/project-state/handoffs/` when future sessions need concise continuity context
 - add ADRs only for real architectural or structural decisions
 
 Do not add ADRs for:
@@ -217,13 +222,15 @@ Do not add ADRs for:
 
 For each meaningful feature or implementation pass:
 
-1. read `docs/implementation-status.md`
-2. read the relevant PRDs and TDDs
-3. implement code
-4. run tests or checks
-5. update `implementation-status.md`
-6. update PRD/TDD/roadmap only where their source-of-truth layer changed
-7. add an ADR only if the work changed architectural direction
+1. read `docs/project-state/implementation-status.md`
+2. read recent handoffs in `docs/project-state/handoffs/` if they exist
+3. read the relevant PRDs and TDDs
+4. implement code
+5. run tests or checks
+6. update `project-state/implementation-status.md`
+7. update PRD/TDD/roadmap only where their source-of-truth layer changed
+8. add a handoff if future sessions need continuity context
+9. add an ADR only if the work changed architectural direction
 
 ## Repository Layout
 
@@ -232,13 +239,18 @@ AGENTS.md
 docs/
   README.md
   terminology.md
-  ui-direction.md
-  design-system.md
-  implementation-status.md
-  roadmap.md
-  prd/
-  tdd/
-  adr/
+  product/
+    prd/
+  engineering/
+    tdd/
+    adr/
+  design/
+    ui-direction.md
+    design-system.md
+  project-state/
+    implementation-status.md
+    roadmap.md
+    handoffs/
 skill/
   agentic-app-framework/
 scripts/

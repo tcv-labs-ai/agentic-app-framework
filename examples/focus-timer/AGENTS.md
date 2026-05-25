@@ -13,11 +13,12 @@ Detailed product, design, and technical decisions live in `docs/`.
 
 For meaningful work, agents should treat the repository documents in this order:
 
-1. `docs/prd/`
-2. `docs/tdd/README.md`
-3. `docs/ui-direction.md`
-4. `docs/design-system.md`
-5. `docs/implementation-status.md`
+1. `docs/product/prd/`
+2. `docs/engineering/tdd/README.md`
+3. `docs/design/ui-direction.md`
+4. `docs/design/design-system.md`
+5. `docs/project-state/implementation-status.md`
+6. recent handoffs in `docs/project-state/handoffs/` if they exist
 
 If this file conflicts with the PRD/TDD documents, the more specific docs are the current source of truth and this file should be updated.
 
@@ -29,9 +30,10 @@ Agents must keep the documentation system aligned with implementation as work pr
 
 Required rules:
 
-- when implementation meaningfully changes, update `docs/implementation-status.md`
+- when implementation meaningfully changes, update `docs/project-state/implementation-status.md`
 - when product behavior changes, update the relevant PRD
 - when technical direction changes, update the relevant TDD
+- when a meaningful session ends with non-obvious context, add a concise handoff under `docs/project-state/handoffs/`
 - add an ADR only when a real architectural or structural decision is made
 - do not create ADRs for routine polish, minor refactors, or small test additions
 

@@ -78,5 +78,5 @@ Motion style:
 Before making meaningful UI changes:
 
 - read this file
-- read `design-system.md`
+- read `design/design-system.md`
 - read the relevant PRDs and TDDs

@@ -6,8 +6,8 @@ Track how the current codebase maps to the PRDs and TDDs.
 
 This document is the working status layer between:
 
-- product intent in `docs/prd/`
-- technical guardrails in `docs/tdd/`
+- product intent in `docs/product/prd/`
+- technical guardrails in `docs/engineering/tdd/`
 - actual implemented code in the repository
 
 It should be updated when a meaningful implementation milestone lands.
@@ -26,7 +26,7 @@ Current application status:
 
 ## PRD Coverage
 
-### `prd/001-product-foundation.md`
+### `product/prd/001-product-foundation.md`
 
 Status: `[STATUS]`
 
@@ -38,7 +38,7 @@ Not yet implemented:
 
 - `[NOT_IMPLEMENTED_ITEM]`
 
-### `prd/002-mvp-experience.md`
+### `product/prd/002-mvp-experience.md`
 
 Status: `[STATUS]`
 
@@ -50,7 +50,7 @@ Not yet implemented:
 
 - `[NOT_IMPLEMENTED_ITEM]`
 
-### `prd/003-domain-rules.md`
+### `product/prd/003-domain-rules.md`
 
 Status: `[STATUS]`
 
@@ -62,7 +62,7 @@ Deferred by design:
 
 - `[DEFERRED_ITEM]`
 
-### `prd/004-platform-and-accessibility.md`
+### `product/prd/004-platform-and-accessibility.md`
 
 Status: `[STATUS]`
 
@@ -74,7 +74,7 @@ Not yet implemented:
 
 - `[NOT_IMPLEMENTED_ITEM]`
 
-### `prd/005-future-direction.md`
+### `product/prd/005-future-direction.md`
 
 Status: `[STATUS]`
 
@@ -86,7 +86,7 @@ Not yet implemented:
 
 - `[NOT_IMPLEMENTED_ITEM]`
 
-### `prd/006-user-flows.md`
+### `product/prd/006-user-flows.md`
 
 Status: `[STATUS]`
 
@@ -98,7 +98,7 @@ Not yet implemented:
 
 - `[NOT_IMPLEMENTED_ITEM]`
 
-### `prd/007-inputs-and-edge-cases.md`
+### `product/prd/007-inputs-and-edge-cases.md`
 
 Status: `[STATUS]`
 
@@ -114,7 +114,7 @@ Not yet implemented:
 
 ## TDD Coverage
 
-### `tdd/001-architecture.md`
+### `engineering/tdd/001-architecture.md`
 
 Status: `[STATUS]`
 
@@ -126,7 +126,7 @@ Remaining:
 
 - `[REMAINING_ITEM]`
 
-### `tdd/002-state-and-flow.md`
+### `engineering/tdd/002-state-and-flow.md`
 
 Status: `[STATUS]`
 
@@ -138,7 +138,7 @@ Remaining:
 
 - `[REMAINING_ITEM]`
 
-### `tdd/003-ui-system.md`
+### `engineering/tdd/003-ui-system.md`
 
 Status: `[STATUS]`
 
@@ -150,7 +150,7 @@ Remaining:
 
 - `[REMAINING_ITEM]`
 
-### `tdd/004-validation-and-persistence.md`
+### `engineering/tdd/004-validation-and-persistence.md`
 
 Status: `[STATUS]`
 
@@ -162,7 +162,7 @@ Remaining:
 
 - `[REMAINING_ITEM]`
 
-### `tdd/005-testing-strategy.md`
+### `engineering/tdd/005-testing-strategy.md`
 
 Status: `[STATUS]`
 
@@ -190,4 +190,5 @@ When implementation meaningfully changes:
 
 - update this file
 - update the relevant PRD or TDD if behavior or technical direction changed
+- add a session handoff if future agents need concise continuity context
 - add an ADR if the implementation required a meaningful architectural decision

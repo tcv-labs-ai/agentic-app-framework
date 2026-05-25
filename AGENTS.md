@@ -13,11 +13,12 @@ Detailed product, design, and technical decisions live in `docs/`.
 
 For meaningful work, agents should treat the repository documents in this order:
 
-1. `docs/prd/`
-2. `docs/tdd/README.md`
-3. `docs/ui-direction.md`
-4. `docs/design-system.md`
-5. `docs/implementation-status.md`
+1. `docs/product/prd/`
+2. `docs/engineering/tdd/README.md`
+3. `docs/design/ui-direction.md`
+4. `docs/design/design-system.md`
+5. `docs/project-state/implementation-status.md`
+6. recent handoffs in `docs/project-state/handoffs/` if they exist
 
 If this file conflicts with the PRD/TDD documents, the more specific docs are the current source of truth and this file should be updated.
 
@@ -29,13 +30,15 @@ Agents must keep the documentation system aligned with implementation as work pr
 
 Required rules:
 
-- when implementation meaningfully changes, update `docs/implementation-status.md`
+- when implementation meaningfully changes, update `docs/project-state/implementation-status.md`
 - when product behavior changes, update the relevant PRD
 - when technical direction changes, update the relevant TDD
+- when a meaningful session ends with non-obvious context, add a concise handoff under `docs/project-state/handoffs/`
 - add an ADR only when a real architectural or structural decision is made
 - do not create ADRs for routine polish, minor refactors, or small test additions
 
-`docs/implementation-status.md` is the required status layer between the PRDs/TDDs and the actual codebase.
+`docs/project-state/implementation-status.md` is the required status layer between the PRDs/TDDs and the actual codebase.
+`docs/project-state/handoffs/` is the chronological continuity layer for session summaries, validation notes, open questions, and next suggested steps.
 
 ---
 
@@ -84,26 +87,27 @@ Primary reference width or target context if relevant:
 
 Read:
 
-1. `docs/tdd/README.md`
+1. `docs/engineering/tdd/README.md`
 2. the relevant PRD documents
-3. `docs/implementation-status.md`
+3. `docs/project-state/implementation-status.md`
+4. recent handoffs in `docs/project-state/handoffs/` if they exist
 
 ### For UI or UX work
 
 Also read:
 
-- `docs/ui-direction.md`
-- `docs/design-system.md`
-- `docs/tdd/003-ui-system.md`
+- `docs/design/ui-direction.md`
+- `docs/design/design-system.md`
+- `docs/engineering/tdd/003-ui-system.md`
 
 ### For architecture, state, or validation work
 
 Also read:
 
 - relevant user-flow and edge-case PRDs
-- `docs/tdd/001-architecture.md`
-- `docs/tdd/002-state-and-flow.md`
-- `docs/tdd/004-validation-and-persistence.md`
+- `docs/engineering/tdd/001-architecture.md`
+- `docs/engineering/tdd/002-state-and-flow.md`
+- `docs/engineering/tdd/004-validation-and-persistence.md`
 
 ### For future platform expansion or domain expansion work
 

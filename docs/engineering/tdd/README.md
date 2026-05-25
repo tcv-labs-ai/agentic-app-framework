@@ -6,7 +6,7 @@ This directory contains the technical design documents for `[PRODUCT_NAME]`.
 
 These documents translate the PRDs into implementation guardrails for architecture, UI structure, validation, persistence, and testing.
 
-Use `docs/implementation-status.md` alongside these TDDs to see what has already been implemented versus what remains target-state guidance.
+Use `docs/project-state/implementation-status.md` alongside these TDDs to see what has already been implemented versus what remains target-state guidance.
 
 ---
 
@@ -24,4 +24,4 @@ Use `docs/implementation-status.md` alongside these TDDs to see what has already
 
 - the TDDs define the technical target state
 - the implementation should move toward them incrementally
-- `docs/implementation-status.md` should be updated when major TDD areas move from planned to implemented
+- `docs/project-state/implementation-status.md` should be updated when major TDD areas move from planned to implemented

@@ -88,5 +88,5 @@ Status:
 
 - roadmap changes should follow PRD or TDD changes, not replace them
 - completed milestones should be updated rather than left stale
-- `implementation-status.md` should be updated alongside milestone progress
+- `project-state/implementation-status.md` should be updated alongside milestone progress
 - future sessions should use this roadmap to choose the next logical implementation target

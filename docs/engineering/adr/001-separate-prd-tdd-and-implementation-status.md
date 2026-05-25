@@ -25,10 +25,10 @@ The framework separates these concerns into distinct layers:
 
 - PRDs define product behavior and scope
 - TDDs define implementation direction and technical guardrails
-- `implementation-status.md` tracks what is actually built right now
+- `project-state/implementation-status.md` tracks what is actually built right now
 - ADRs capture the why behind real architectural decisions
 
-`implementation-status.md` is a required bridge layer between specifications and code.
+`project-state/implementation-status.md` is a required bridge layer between specifications and code.
 It is not optional project reporting.
 
 ## Consequences

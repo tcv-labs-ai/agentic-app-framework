@@ -5,7 +5,8 @@ A small example application that demonstrates how to use the Agentic App Framewo
 This example shows:
 
 - filled PRDs and TDDs
-- a real `implementation-status.md`
+- a real `project-state/implementation-status.md`
+- the `project-state/handoffs/` continuity convention
 - one focused ADR
 - a small app with clear domain, application, and presentation layers
 - tests that align with the documented architecture

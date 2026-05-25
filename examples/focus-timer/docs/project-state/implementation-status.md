@@ -10,7 +10,7 @@
 
 ## PRD Coverage
 
-### `prd/001-product-foundation.md`
+### `product/prd/001-product-foundation.md`
 
 Status: implemented for MVP
 
@@ -23,7 +23,7 @@ Not yet implemented:
 
 - broader productivity features
 
-### `prd/002-mvp-experience.md`
+### `product/prd/002-mvp-experience.md`
 
 Status: implemented
 
@@ -37,7 +37,7 @@ Not yet implemented:
 
 - none for current MVP scope
 
-### `prd/003-domain-rules.md`
+### `product/prd/003-domain-rules.md`
 
 Status: implemented for MVP
 
@@ -52,7 +52,7 @@ Deferred by design:
 - notifications
 - multi-phase routines
 
-### `prd/004-platform-and-accessibility.md`
+### `product/prd/004-platform-and-accessibility.md`
 
 Status: mostly implemented
 
@@ -66,7 +66,7 @@ Not yet implemented:
 
 - stronger keyboard polish beyond default browser behavior
 
-### `prd/005-future-direction.md`
+### `product/prd/005-future-direction.md`
 
 Status: intentionally deferred
 
@@ -78,7 +78,7 @@ Not yet implemented:
 
 - notifications, history, sound, shortcuts
 
-### `prd/006-user-flows.md`
+### `product/prd/006-user-flows.md`
 
 Status: implemented for MVP
 
@@ -90,7 +90,7 @@ Not yet implemented:
 
 - expanded future flows
 
-### `prd/007-inputs-and-edge-cases.md`
+### `product/prd/007-inputs-and-edge-cases.md`
 
 Status: mostly implemented
 
@@ -106,7 +106,7 @@ Not yet implemented:
 
 ## TDD Coverage
 
-### `tdd/001-architecture.md`
+### `engineering/tdd/001-architecture.md`
 
 Status: implemented
 
@@ -118,7 +118,7 @@ Remaining:
 
 - none for example scope
 
-### `tdd/002-state-and-flow.md`
+### `engineering/tdd/002-state-and-flow.md`
 
 Status: implemented
 
@@ -130,7 +130,7 @@ Remaining:
 
 - none for example scope
 
-### `tdd/003-ui-system.md`
+### `engineering/tdd/003-ui-system.md`
 
 Status: implemented
 
@@ -143,7 +143,7 @@ Remaining:
 
 - additional polish only
 
-### `tdd/004-validation-and-persistence.md`
+### `engineering/tdd/004-validation-and-persistence.md`
 
 Status: implemented
 
@@ -155,7 +155,7 @@ Remaining:
 
 - none for example scope
 
-### `tdd/005-testing-strategy.md`
+### `engineering/tdd/005-testing-strategy.md`
 
 Status: implemented for example scope
 
