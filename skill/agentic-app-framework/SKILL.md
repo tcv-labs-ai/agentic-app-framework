@@ -31,6 +31,25 @@ Default framework source repo:
 
 If the framework repo lives elsewhere, pass `--source <path>` to the bootstrap script.
 
+## Documentation Destination
+
+When this skill writes project documentation, use the `docs/` directory at the
+root of the active project by default.
+
+Resolve the destination in this order:
+
+1. Use an explicit documentation path supplied by the user.
+2. Follow a different location required by the active project's `AGENTS.md` or
+   other repository-local instructions.
+3. Otherwise use `<active-project-root>/docs/`, where the active project root is
+   the Git repository containing the current working directory, or the current
+   project/workspace root when Git is not available.
+
+Do not write project documentation to the skill source repository, the installed
+skill directory, the user's home directory, or another repository merely because
+it is a TCV Labs default. Preserve deliberate storage exceptions, such as the
+Continuum `knowledge/inbox/` workflow described below.
+
 ## Maintenance Workflow
 
 Before meaningful implementation work:
@@ -51,6 +70,12 @@ After meaningful implementation work:
 
 Do not add ADRs for routine UI polish, minor refactors, or small test additions.
 
+## Continuum Content Workflow
+
+When the user asks to create durable content for Continuum, classify it, or store
+it through the Continuum knowledge pipeline, read
+`references/continuum-content-workflow.md` before acting.
+
 ## Required Discipline
 
 Use `references/maintenance-checklist.md` as the final pass whenever the task includes implementation changes.
@@ -68,3 +93,4 @@ When maintaining docs:
 
 - `scripts/bootstrap_framework.sh`: copy the framework into an existing repo safely
 - `references/maintenance-checklist.md`: concise checklist for post-implementation doc maintenance
+- `references/continuum-content-workflow.md`: guidance for source-grounded Continuum content creation, classification, inbox review, and promotion

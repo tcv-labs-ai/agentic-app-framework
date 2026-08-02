@@ -42,6 +42,20 @@ Required rules:
 
 ---
 
+## Documentation Location
+
+Project documentation belongs in this repository's `docs/` directory by
+default. Use an explicit path from the user first, then follow a different
+location required by repository-local instructions. Otherwise resolve the
+active project root from the Git repository containing the current working
+directory, or from the current project/workspace when Git is unavailable, and
+write to `<active-project-root>/docs/`.
+
+Do not write project documentation to a skill source or installed-skill
+directory, the user's home directory, or another repository unless explicitly
+directed. Deliberate storage exceptions, such as Continuum's `knowledge/`
+workflow, remain governed by their own instructions.
+
 ## Project Overview
 
 `[PRODUCT_NAME]` is a `[PROJECT_TYPE]` for `[TARGET_USER]`.

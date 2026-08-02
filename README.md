@@ -148,6 +148,9 @@ Typical responsibilities:
 - add concise handoffs when a session leaves useful continuity context
 - include handoff closeout metadata with 12-hour local/project time and closing user/operator
 - add ADRs only for real architectural or structural decisions
+- guide Continuum content creation/classification/storage workflows from any
+  working directory by resolving the Continuum inbox, routing durable knowledge
+  through review, and requiring explicit promotion
 
 ## Bootstrap Prompts For Codex
 
