@@ -1,0 +1,4 @@
+interface:
+  display_name: "Session Continuity"
+  short_description: "Keep handoffs and next-session context current"
+  default_prompt: "Use $session-continuity to capture durable context and prepare the next session."

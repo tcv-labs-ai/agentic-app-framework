@@ -3,7 +3,7 @@ set -euo pipefail
 
 repo_root="$(cd "$(dirname "$0")/.." && pwd)"
 skill_name="agentic-app-framework"
-source_dir="$repo_root/skill/$skill_name"
+source_dir="$repo_root/skills/$skill_name"
 target_dir="$HOME/.codex/skills/$skill_name"
 force="false"
 dry_run="false"

@@ -27,7 +27,7 @@ The goal is simple: make it practical to build applications with AI while keepin
 
 ### Companion Codex skill
 
-- `skill/agentic-app-framework/`: versioned Codex skill for this framework
+- `skills/agentic-app-framework/`: versioned Codex skill for this framework
 - `scripts/install-local-skill.sh`: installs or refreshes the local Codex copy of the skill
 - skill responsibilities:
   - bootstrap the framework into an existing repo
@@ -133,6 +133,23 @@ Important:
 - the repo is versioned source of truth
 - the local Codex skill is a deployed copy
 - getting the latest skill requires running the install script again after repo updates
+
+## Operating-Model Skills
+
+This repository is also the version-controlled source for reusable operating-model skills:
+
+- `session-continuity`: creates and maintains durable agent-workspace context, handoffs, and next-session prompts.
+- `tcv-labs-governance-skill`: applies TCV Labs repository and security boundaries.
+- `tcv-labs-ops-record`: records non-secret TCV Labs work in the control-plane repository.
+
+Install or refresh every local runtime copy together:
+
+```bash
+./scripts/install-local-skills.sh --force
+./scripts/verify-local-skills.sh
+```
+
+The version-controlled source is canonical. Installed copies under `~/.codex/skills/` are derived runtime artifacts and should never be edited directly.
 
 ## Skill Usage
 
@@ -257,11 +274,16 @@ docs/
     implementation-status.md
     roadmap.md
     handoffs/
-skill/
+skills/
   agentic-app-framework/
+  session-continuity/
+  tcv-labs-governance-skill/
+  tcv-labs-ops-record/
 scripts/
   init-project.sh
   install-local-skill.sh
+  install-local-skills.sh
+  verify-local-skills.sh
 ```
 
 ## License
